@@ -52,7 +52,7 @@
     </supports-screens>
 
     <uses-sdk
-        android:minSdkVersion="4"
+        android:minSdkVersion="15"
         android:maxSdkVersion="17"
         android:targetSdkVersion="16" />
 
@@ -105,6 +105,12 @@
             android:name=".boot.BootService"
             class="BootService" >
         </service>
+
+        <receiver android:name=".screen.ScreenReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
 
         <!-- Handle incoming external intents -->
         <receiver android:name=".WFBroadcastReceiver">
